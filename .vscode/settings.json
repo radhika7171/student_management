@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "venv/bin/python3",
+    "editor.tabSize": 4,
+    "pyhton.linting.enabled": true,
+    "python.linting.pylintEnabled":false,
+    "pyhton.linting.flake8Enabled": true
+
+}
