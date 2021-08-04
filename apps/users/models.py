@@ -56,3 +56,33 @@ class User(AbstractBaseUser):
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
         return True
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    preferred_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='profile-images')
+    discord_name = models.CharField(max_length=100)
+    github_username = models.CharField(max_length=100)
+    codepen_username = models.CharField(max_length=100)
+    linkedin_url = models.CharField(max_length=255)
+    
+    LEVELS = (
+        (1, 'Level One'),
+        (2, 'Level Two'),
+    )
+
+    current_level = models.IntegerField(choices = LEVELS)
+
+    phone = models.CharField(max_length=50)
+    time_zone = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'

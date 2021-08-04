@@ -1,4 +1,0 @@
-SELECT *
-FROM pg_stat_activity
-CREATE TABLE,
-INSERT TABLE

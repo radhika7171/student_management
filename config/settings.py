@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+AUTH_USER_MODEL = 'users.User'   #users- app, User- model
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -81,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':   'rest_api_database',
-        'USER':    'radhika',
-        'PASSWORD': '',
+        'USER':    'postgres',
+        'PASSWORD': 'Dream@2871996',
         'HOST':     'localhost',
         'PORT':     '',
     }
